@@ -4,7 +4,7 @@
 	<title>TomatoTimer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="js/main.js"></script>
+	
 </head>
 <body>
 	<div class="container">
@@ -24,23 +24,31 @@
 		<div class="fantasma"></div>
 
 		<div class="row">
-			<div class="column btn-primary"><a href="#">Pomodoro</a></div>
-			<div class="column btn-primary"><a href="#">Short Break</a></div>
-			<div class="column btn-primary"><a href="#">Long Break</a></div>
+			<!-- <div class="column btn-primary" id="pomodoro"><a href="">Pomodoro</a></div> -->
+			<div><button class="column btn-primary" id="pomodoro" type="submit">Pomodoro</button></div>
+			<div><button class="column btn-primary" id="shortbreak" type="submit">Short Break</button></div>
+			<!-- <div class="column btn-primary" id="shortbreak"><a href="">Short Break</a></div> -->
+			<div><button class="column btn-primary" id="longbreak" type="submit">Long Break</button></div>
+			<!-- <div class="column btn-primary" id="longbreak"><a href="">Long Break</a></div> -->
 		</div>
 		<div class="timer">
-			<h1>25:00</h1>
+			<h1 id="clock">25:00</h1>
 		</div>
 		<div class="fantasma"></div>
 		<div class="row">
-			<div class="column btn-secondary btn-start"><a href="#">Start</a></div>
-			<div class="column btn-secondary btn-stop"><a href="#">Stop</a></div>
-			<div class="column btn-secondary btn-reset"><a href="#">Reset</a></div>
+			<div><button class="column btn-secondary btn-start" id="start" type="submit">Start</button></div>
+			<!-- <div class="column btn-secondary btn-start" id="start"><a href="#">Start</a></div> -->
+			<div><button class="column btn-secondary btn-stop" id="stop" type="submit">Stop</button></div>
+			<!-- <div class="column btn-secondary btn-stop" id="stop"><a href="#">Stop</a></div> -->
+			<div><button class="column btn-secondary btn-reset" id="reset" type="submit">Reset</button></div>
+			<!-- <div class="column btn-secondary btn-reset" id="reset"><a href="#">Reset</a></div> -->
 		</div>
 
 		<footer class="footer">
 			<p>Tomato Timer by Marcos Imfeld</p>
 		</footer>
 	</div>
+
+	<script src="js/main.js"></script>
 </body>
 </html>

@@ -75,6 +75,9 @@ header {
 	background-color: #38b5d8;
 	border: 1px solid #38b5d8;
 	border-style: outset;
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 .btn-primary:hover {
@@ -94,6 +97,9 @@ header {
 }
 
 .btn-secondary {
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
 	margin: 0 20px;
 	border-radius: 3px;
 	border-style: outset;
@@ -121,9 +127,6 @@ header {
 .btn-reset {
 	border: 1px solid #F7F7F7;
 	background: #F7F7F7;
-}
-
-.btn-reset a {
 	color: black;
 }
 
@@ -144,6 +147,6 @@ header {
 .footer {
  	background-color: #444444;
   	text-align: center;
-  	padding: 10px;
+  	padding: 20px;
   	color: white;
 }
