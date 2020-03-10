@@ -1,12 +1,12 @@
 
 var clock;
-
+var distance;
 
 function timerPomodoro() {
 
 	clearInterval(clock);
 
-	let distance = new Date("Jan 5, 2021 00:25:00").getTime();
+	distance = 1500000;
 
 	clock = setInterval(function() {
 
@@ -17,8 +17,9 @@ function timerPomodoro() {
 		seconds = seconds >= 10 ? seconds : `0${seconds}`;
 
 		document.getElementById("clock").innerHTML = minutes + ":" + seconds;
+		document.querySelector("title").innerHTML = "(" + minutes + ":" + seconds + ") TomatoTimer";
 
-		distance = distance - 1000;
+		distance -= 1000;
 
 		if (distance < 0) {
 	    	clearInterval(clock);
@@ -31,7 +32,7 @@ function timerPomodoro() {
 function timerShortBreak() {
 	clearInterval(clock);
 
-	let distance = new Date("Jan 5, 2021 00:05:00").getTime();
+	distance = 300000;
 	
 	clock = setInterval(function() {
 
@@ -42,6 +43,7 @@ function timerShortBreak() {
 		seconds = seconds >= 10 ? seconds : `0${seconds}`;
 
 		document.getElementById("clock").innerHTML = `0${minutes}` + ":" + seconds;
+		document.querySelector("title").innerHTML = "(" + `0${minutes}` + ":" + seconds + ") TomatoTimer";
 
 		distance = distance - 1000;
 
@@ -51,14 +53,13 @@ function timerShortBreak() {
 	  	}
 
 	}, 1000);
-	return clock;
 }
 
 function timerLongBreak() {
 
 	clearInterval(clock);
 
-	let distance = new Date("Jan 5, 2021 00:10:00").getTime();
+	distance = 600000;
 	
 	clock = setInterval(function() {
 
@@ -70,7 +71,8 @@ function timerLongBreak() {
 		minutes = minutes === 10 ? minutes : `0${minutes}`;
 
 		document.getElementById("clock").innerHTML = minutes + ":" + seconds;
-
+		document.querySelector("title").innerHTML = "(" + minutes + ":" + seconds + ") TomatoTimer";
+		
 		distance = distance - 1000;
 
 		if (distance < 0) {
@@ -79,11 +81,9 @@ function timerLongBreak() {
 	  	}
 
 	}, 1000);
-	return clock;
 }
 
-function stopAnyTimer(timerPomodoro) {
-	let clock = timerPomodoro();
+function stopAnyTimer() {
 	clearInterval(clock);
 }
 
@@ -97,3 +97,15 @@ btnShortBreak.addEventListener("click", timerShortBreak);
 let btnLongBreak = document.getElementById('longbreak');
 btnLongBreak.addEventListener("click", timerLongBreak);
 
+let btnStop = document.getElementById('stop');
+btnStop.addEventListener("click", stopAnyTimer);
+
+
+/**
+ * year footer
+ */
+
+var year = new Date().getFullYear();
+
+let a = document.getElementById("year");
+a.innerHTML = year;

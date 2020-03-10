@@ -97,6 +97,7 @@ header {
 }
 
 .btn-secondary {
+	padding: 15px 30px;
 	color: white;
 	font-weight: bold;
 	font-size: 14px;
@@ -145,8 +146,12 @@ header {
 }
 
 .footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
  	background-color: #444444;
   	text-align: center;
-  	padding: 20px;
+  	padding: 25px;
   	color: white;
 }
