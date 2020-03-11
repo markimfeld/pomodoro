@@ -1,16 +1,13 @@
-
-var clock;
+var clockId;
+var distance;
 
 
 function timerPomodoro() {
+	clearInterval(clockId);
 
-	clearInterval(clock);
+	distance = 1500000;
 
-	let distance = new Date("Jan 5, 2021 00:25:00").getTime();
-
-	clock = setInterval(function() {
-
-
+	clockId = setInterval(function(){
 		let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 		let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -21,19 +18,18 @@ function timerPomodoro() {
 		distance = distance - 1000;
 
 		if (distance < 0) {
-	    	clearInterval(clock);
+	    	clearInterval(clockId);
 	    	document.getElementById("clock").innerHTML = "25:00";
 	  	}
-
 	}, 1000);
 }
 
 function timerShortBreak() {
-	clearInterval(clock);
+	clearInterval(clockId);
 
-	let distance = new Date("Jan 5, 2021 00:05:00").getTime();
+	let distance = 300000;
 	
-	clock = setInterval(function() {
+	clockId = setInterval(function() {
 
 
 		let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -46,21 +42,20 @@ function timerShortBreak() {
 		distance = distance - 1000;
 
 		if (distance < 0) {
-	    	clearInterval(clock);
+	    	clearInterval(clockId);
 	    	document.getElementById("clock").innerHTML = "05:00";
 	  	}
 
 	}, 1000);
-	return clock;
 }
 
 function timerLongBreak() {
 
-	clearInterval(clock);
+	clearInterval(clockId);
 
-	let distance = new Date("Jan 5, 2021 00:10:00").getTime();
+	let distance = 600000;
 	
-	clock = setInterval(function() {
+	clockId = setInterval(function() {
 
 
 		let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -79,12 +74,18 @@ function timerLongBreak() {
 	  	}
 
 	}, 1000);
-	return clock;
 }
 
-function stopAnyTimer(timerPomodoro) {
-	let clock = timerPomodoro();
-	clearInterval(clock);
+function stopAnyTimer() {
+	clearInterval(clockId);
+}
+
+function startAnyTimer() {
+
+}
+
+function resetTimer() {
+
 }
 
 
@@ -97,3 +98,5 @@ btnShortBreak.addEventListener("click", timerShortBreak);
 let btnLongBreak = document.getElementById('longbreak');
 btnLongBreak.addEventListener("click", timerLongBreak);
 
+let btnStop = document.getElementById('stop');
+btnStop.addEventListener("click", stopAnyTimer);
