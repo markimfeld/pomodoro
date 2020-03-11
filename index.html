@@ -4,7 +4,7 @@
 	<title>TomatoTimer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	
+	<link rel="icon" href="images/fruit.png">
 </head>
 <body>
 	<div class="container">
@@ -25,10 +25,10 @@
 
 		<div class="row">
 			<!-- <div class="column btn-primary" id="pomodoro"><a href="">Pomodoro</a></div> -->
-			<div><button class="column btn-primary" id="pomodoro" type="submit">Pomodoro</button></div>
-			<div><button class="column btn-primary" id="shortbreak" type="submit">Short Break</button></div>
+			<div><button class="column btn-primary" id="pomodoro" type="submit" onclick="timer(1500000)">Pomodoro</button></div>
+			<div><button class="column btn-primary" id="shortbreak" type="submit" onclick="timer(300000)">Short Break</button></div>
 			<!-- <div class="column btn-primary" id="shortbreak"><a href="">Short Break</a></div> -->
-			<div><button class="column btn-primary" id="longbreak" type="submit">Long Break</button></div>
+			<div><button class="column btn-primary" id="longbreak" type="submit" onclick="timer(600000)">Long Break</button></div>
 			<!-- <div class="column btn-primary" id="longbreak"><a href="">Long Break</a></div> -->
 		</div>
 		<div class="timer">
@@ -36,16 +36,16 @@
 		</div>
 		<div class="fantasma"></div>
 		<div class="row">
-			<div><button class="column btn-secondary btn-start" id="start" type="submit">Start</button></div>
+			<div><button class="column btn-secondary btn-start" id="start" type="submit" onclick="startTimer(distance)">Start</button></div>
 			<!-- <div class="column btn-secondary btn-start" id="start"><a href="#">Start</a></div> -->
 			<div><button class="column btn-secondary btn-stop" id="stop" type="submit">Stop</button></div>
 			<!-- <div class="column btn-secondary btn-stop" id="stop"><a href="#">Stop</a></div> -->
-			<div><button class="column btn-secondary btn-reset" id="reset" type="submit">Reset</button></div>
+			<div><button class="column btn-secondary btn-reset" id="reset" type="submit" onclick="resetTimer()">Reset</button></div>
 			<!-- <div class="column btn-secondary btn-reset" id="reset"><a href="#">Reset</a></div> -->
 		</div>
 
 		<footer class="footer">
-			<p>Tomato Timer by Marcos Imfeld</p>
+			<p>&copy; Tomato Timer by Marcos Imfeld - <spam id="year"></spam>. Todos los derechos reservados.</p>
 		</footer>
 	</div>
 
