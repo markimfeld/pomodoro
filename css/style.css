@@ -58,7 +58,7 @@ header {
 
 .row {
 	width: 80%;
-	margin: 50px auto;
+	margin: 25px auto;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -144,8 +144,26 @@ header {
 	font-size: 50px
 }
 
+.shortcuts {
+	background: #F2F2F2;
+	padding: 20px 30px;
+	border: 1px ridge #ccc;
+}
+
+.bold-style {
+	font-weight: bold;
+}
+
+.shortcuts ul {
+	list-style: square;
+}
+
+.shortcuts ul li {
+	margin: 5px 0;
+}
+
 .footer {
-	position: fixed;
+	position: relative;
 	bottom: 0;
 	left: 0;
 	right: 0;

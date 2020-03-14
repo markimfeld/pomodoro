@@ -62,6 +62,7 @@ function resetTimer() {
 	else if(distanceInitial == 600000) finalTextTimer = "10:00";
 					
 	document.getElementById("clock").innerHTML = finalTextTimer;
+	document.querySelector("title").innerHTML = "TomatoTimer";
 }
 
 let btnStop = document.getElementById('stop');
@@ -80,9 +81,10 @@ let a = document.getElementById("year");
 a.innerHTML = year;
 
 
-document.addEventListener("keypress", event => {
-
-	if(event.keyCode == 32) {
+document.addEventListener('keydown', function(event) {
+	let key = event.keyCode || event.which;
+	let distanceLocal;
+	if(key == 32) {
 		if(status == 0) {
 			startTimer(distance);
 			status = 1;
@@ -90,14 +92,18 @@ document.addEventListener("keypress", event => {
 			stopAnyTimer();
 			status = 0;
 		}
-	}
-});
-
-// alt ==> 18
-// r   ==> 82
-
-document.addEventListener("keypress", event => {
-	if(event.altKey && event.keyCode == 82) {
+	} else if(event.altKey && key == 82) {
 		resetTimer();
+	} else if(event.altKey && key == 80) {
+		distanceLocal = 1500000;
+		timer(distanceLocal);
+	} else if(event.altKey && key == 83) {
+		distanceLocal = 300000;
+		timer(distanceLocal);
+	} else if(event.altKey && key == 76) {
+		distanceLocal = 600000;
+		timer(distanceLocal);
 	}
 });
+
+
