@@ -1,7 +1,7 @@
 var clock;
 var distance = 1500000;
 var distanceInitial;
-var status = false;
+var status = 0;
 
 
 function timer(d) {
@@ -83,10 +83,12 @@ a.innerHTML = year;
 document.addEventListener("keypress", event => {
 
 	if(event.keyCode == 32) {
-		if(!status) {
+		if(status == 0) {
 			startTimer(distance);
+			status = 1;
 		} else {
 			stopAnyTimer();
+			status = 0;
 		}
 	}
 });
@@ -95,7 +97,7 @@ document.addEventListener("keypress", event => {
 // r   ==> 82
 
 document.addEventListener("keypress", event => {
-	if(event.keyCode == 82) {
+	if(event.altKey && event.keyCode == 82) {
 		resetTimer();
 	}
 });
